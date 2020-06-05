@@ -153,7 +153,8 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			 * if there is a value in the attr_title property. If the attr_title
 			 * property is NOT null we apply it as the class name for the icon
 			 */
-			if ( ! empty( $item->attr_title ) ){
+			if ( ( ! empty( $item->attr_title ) ) && (strcasecmp( $item->attr_title, 'dropdown-header') !== 0)){
+
 				$item_output .= '<span class="' . esc_attr( $item->attr_title ) . '"></span>&nbsp;';
 			}
 
